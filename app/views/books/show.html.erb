@@ -1,2 +1,14 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%= render 'books/books', book: @books %>
+<%= render 'users/users', user: @book.user %>
+
+<h2>Book detail</h2>
+<table>
+   <tbody>
+      <tr>
+        <td><%= @book.title %></td>
+        <td><%= @book.body %></td>
+        <th><%= link_to "Edit", edit_book_path %></th>
+        <th><%= link_to "Destroy", book_path(@book.id), method: :delete, data: {confirm: "本当に消しますか？"} %></th>
+      </tr>
+    </tbody>
+</table>
