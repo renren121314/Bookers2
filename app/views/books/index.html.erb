@@ -11,9 +11,12 @@
     <tbody>
       <% @books.each do |book| %>
       <tr>
+        <!--ここから下なぜかlink_toしない-->
+        <%= link_to book_path(book.id) do %>
         <td><%= image_tag book.user.get_profile_image(100,100) %></td>
-        <td><%= book.user.name %></td>
         <td><%= book.title %></td>
+        <% end %>
+        <!--↑ここなぜかlink_toしない-->
         <td><%= book.body %></td>
       </tr>
       <% end %>
