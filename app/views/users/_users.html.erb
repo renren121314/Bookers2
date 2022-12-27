@@ -1,5 +1,4 @@
 <div>
-  
   <h2>User info</h2>
   <%= image_tag user.get_profile_image(100,100) %>
   <table>
@@ -10,5 +9,7 @@
     <th>introduction</th>
     <th><%= user.introduction %></th>
   </table>
-  <p><%=link_to "編集",  edit_user_path(current_user.id) %></p>
-</div>
+  <%=link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do %>
+  <i class ="fas fa-user-cog"></i>
+  <% end %>
+</div> 
